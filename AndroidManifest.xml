@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" android:requiredSplitTypes="base__abi,base__density" android:splitTypes="" package="gt.com.bi.bienlinea" platformBuildVersionCode="34" platformBuildVersionName="14">
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="true"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <queries>
+        <package android:name="gt.com.bi.bipay"/>
+        <intent>
+            <action android:name="android.speech.RecognitionService"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="https"/>
+        </intent>
+        <package android:name="com.google.android.apps.maps"/>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE"/>
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION"/>
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <permission android:name="gt.com.bi.bienlinea.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="gt.com.bi.bienlinea.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:extractNativeLibs="false" android:icon="@drawable/ic_bi_icon" android:label="@string/app_name" android:largeHeap="true" android:name="gt.com.bi.bienlinea.App" android:requestLegacyExternalStorage="true" android:roundIcon="@drawable/ic_bi_icon" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesCleartextTraffic="false">
+        <activity android:configChanges="layoutDirection|locale" android:exported="true" android:launchMode="singleTask" android:name="gt.com.bi.bienlinea.MainActivity" android:theme="@style/Theme.CustomSplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"/>
+                <data android:host="belappgt.bi.com.gt"/>
+                <data android:pathPrefix="/qr"/>
+                <data android:pathPrefix="/digitalAccountExternal"/>
+                <data android:pathPrefix="/submissions"/>
+                <data android:pathPrefix="/consumerCredit"/>
+                <data android:pathPrefix="/digitalSignature"/>
+                <data android:pathPrefix="/historialACH"/>
+                <data android:pathPrefix="/digitalAccount"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="true" android:name="gt.com.bi.bienlinea.PushMessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:foregroundServiceType="location" android:name="bienlinea.bi.com.gt.common.utils.googleService.location.LocationService"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/ic_push_icon"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_channel_id" android:value="@string/default_notification_channel_id"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+        <activity android:name="bienlinea.bi.com.gt.core.fintech.ui.AliasFintechActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.core.fintech.ui.AccountFintechActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.core.fintech.ui.FintechPermissionActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.core.fintech.ui.AccountEmptyFintechActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="bienlinea.bi.com.gt.core.fintech.ui.LoginFintechActivity" android:screenOrientation="portrait">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="belappgt.bi.com.gt" android:pathPrefix="/fintech" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="bel3-ent4.osapps.bi.com.gt" android:pathPrefix="/fintech" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="bel3-ent3.osapps.bi.com.gt" android:pathPrefix="/fintech" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:name="gt.com.bi.bienlinea.LoginOptionsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@style/com_facebook_activity_theme"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="@string/fb_login_protocol_scheme"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="cct.gt.com.bi.bienlinea" android:scheme="fbconnect"/>
+            </intent-filter>
+        </activity>
+        <receiver android:exported="true" android:name="gt.com.bi.bienlinea.widgets.BiExchangeWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/biexchange_widget_info"/>
+        </receiver>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.core.abi.AbiActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.core.MainCoreActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_menu" android:launchMode="singleTop" android:name="bienlinea.bi.com.gt.core.MenuActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:exported="false" android:launchMode="singleTop" android:name="bienlinea.bi.com.gt.core.HomeActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.core.notification.NotificationHistoryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.core.notification.NotificationDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="bienlinea.bi.com.gt.core.notification.NotificationActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.presentation.insurance.OnBoardingInsuranceBI" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.presentation.insurance.InsuranceWebView" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.card.SelectCardActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.card.CreditCardPaymentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.card.ConfirmCreditCardActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.card.DebitAccountsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.loan.LoanPaymentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.loan.SelectLoanActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.PaymentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.presentation.cuik.activities.MTCuikActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.presentation.cuik.activities.MTCuikMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.payments.presentation.cuik.activities.MTCuikPermissionActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.transfer.AcceptedNegotiationActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:label="@string/title_abroads" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.AbroadAdapterActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:label="@string/title_abroads" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.SignTaeActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:label="@string/title_abroads" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.BeneficiaryEditActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/title_abroads" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.IntermediaryBankActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/title_abroads" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.FormBeneficiariesActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/title_abroads" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.StepTwoValidationAmount" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/title_abroads" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.SelectionCurrencyTrade" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/title_abroads" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.DebitAccountTransferEx" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:label="@string/title_abroads" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.AreaFlowActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:label="@string/title_abroads" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.StepThreeConcept" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:label="@string/title_abroads" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.StepFourDetailsTransfer" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.RelationshipBeneficiary" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.transfers_abroad.activity.TransfersAbroadTermsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.amounts.AmountsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.amounts.AccountsLimitsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.common.utils.opening.OpeningListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.maintenance.AddThirdAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.maintenance.AddAchAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.maintenance.BankActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.maintenance.AccountMaintenanceDetailActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="bienlinea.bi.com.gt.transfers.transfer.ConfirmTransferActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.transfers.transfer.TransferAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.transfer.AccreditAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.maintenance.ThirdMaintenanceDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.transfer.TransferActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.transfers.external_transfers.activity.VouchersTaeActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.accounts.pat.balance_unification.presentation.RequestBalanceUnificationActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.accounts.pat.balance_unification.presentation.SeeInstallmentBalanceUnificationActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.accounts.ui.wallet.WalletActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.accounts.pat.balance_unification.presentation.ResumenBalanceUnificationActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.accounts.pat.balance_unification.presentation.BalanceUnificationActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.accounts.signature.ui.PreliminarySignatureInfoActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.accounts.signature.ui.DocumentSigningActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.calculateExFinancing.presentation.SelectCardExFinancingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.limits.PeriodicityActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.customization.ui.CreditCardCustomizationActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.confirmationExtrafinancingManagement.presentation.ConfirmationEFManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.requestExtrafinancingManagement.ExtrafinancingManagementActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.requestExtrafinancing.presentation.RequestFailedEFCreditActivity" android:screenOrientation="portrait" android:theme="@style/FullScreenActivity"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.currentExtrafinancingDetail.CurrentExtrafinancingDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.currentExtrafinancingList.CurrentExtrafinancingListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.extrafinancingConfirmation.presentation.ExtrafinancingConfirmationActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.accountToBeCredit.AccountToBeCreditActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.requestExtrafinancing.presentation.RequestExtrafinancingActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateVisible"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.feesToPay.FeesToPayActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.feeQuotation.presentation.FeeQuotationActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.extrafinancing.calculateExFinancing.presentation.CalculateExFinancingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.carousel.CarouselActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.card.AdditionalCardActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.from_menu.CreditCardsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.cutoff.CutoffDatesListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.cutoff.CutoffDateActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.limits.SettingLimitsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.limits.ChangeLimitsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.activate.ActivateCardActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.CardSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.card.CardDetailActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.FavoritesAccountsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.AccountDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.AccountHistoryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.payroll.PayrollActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.accounts.pat.benefits.CreditCardBenefitsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:exported="false" android:name="bienlinea.bi.com.gt.accounts.remittance_funds.RemittanceFundsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:exported="false" android:name="bienlinea.bi.com.gt.accounts.remittance_funds.ServiceAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:exported="false" android:name="bienlinea.bi.com.gt.accounts.remittance_funds.RemittanceConsignmentDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="br.com.hst.vcs.jobs.ReadMerchantQRCodeJob$MerchantCaptureActivitySensor" android:screenOrientation="fullSensor" android:stateNotNeeded="true" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|layoutDirection|locale|orientation" android:name="br.com.hst.vcs.jobs.ReadMerchantQRCodeJob$MerchantQRCodeActivity"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key"/>
+        <activity android:configChanges="orientation" android:exported="true" android:label="@string/title_activity_maps" android:name="bienlinea.bi.com.gt.auth.MapsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.TermsAndFeaturesTCActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.UpdateSecurityProfileActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.WelcomeTCActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.RegisterFacePhiSecurityActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.PasswordFirstLoginActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.ConfirmSendCredentialActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.PasswordPeriodicityActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.BlockedActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.SplashActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation" android:exported="true" android:launchMode="singleTop" android:name="bienlinea.bi.com.gt.auth.LoginActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="bienlineadev.page.link" android:scheme="https"/>
+                <data android:host="bienlinea.page.link" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation" android:label="@string/title_activity_exchange_rate" android:name="bienlinea.bi.com.gt.auth.ExchangeRateActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.common.session.TokenActivity" android:screenOrientation="unspecified" android:theme="@style/TokenActivityStyle" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.RecoveryPasswordActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.RecoverMethodActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.SecretQuestionActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.TemporalPasswordActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.ChangePasswordActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.LoginFavMethodActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.ContactActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.MapsFiltersActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.auth.PasswordFacephiActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.MTTransferDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.user.MTActionScanQrActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.transfers.MTDynamicQRActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.dynamicQR.MTDynamicQrBaseActivity"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.transfers.MTRequestCashActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.cuik.ConfirmationStaticPayCuikActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.zigitransfer.TransferConfirmActivity"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.zigitransfer.SelectAccountTransfer" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.zigitransfer.TransferActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.user.MTUserScanQRActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.user.MTUserQrActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.user.MTUserQrActivityV2" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.auth.MTExternalLoginActivity"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.transfers.MTTransferCollectConfirmActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.transfers.MTTransferCollectActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.transfers.MTTransferFavoriteActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.transfers.MTTranferSelfActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.transfers.MTVoucherActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.transfers.MTTransferConfirmActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.transfers.MTBeneficiaryActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.transfers.MTTransferActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.history.MTHistoryActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.onboarding.MTOnBoardingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.beneficiaries.MTNewFavoriteActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.agenda.MTAgendaActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.user.MTUserProfileBaseActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.user.MTUserProfileActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.token.MTTokenActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.MTExternalHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.MTStarterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.account.MTAccountSelectorActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.user.MTUserSignUpActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_main" android:name="bienlinea.bi.com.gt.mobile_transfers.presentation.activities.MTHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.yalantis.ucrop.UCropActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name="bienlinea.bi.com.gt.configuration.ChangeLocaleActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.configuration.ConfigurationActivity"/>
+        <activity android:name="bienlinea.bi.com.gt.configuration.FacephiSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.configuration.ChangePasswordSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.configuration.NotificationSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:exported="false" android:name="bienlinea.bi.com.gt.serbipagos.PaymentServicesWebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.favorites.basicPayment.ServiceCategoryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.PaymentServicesActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.favorites.SelectContractActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.favorites.PayContractActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.favorites.SelectDebitPaymentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.favorites.EditAliasActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.favorites.VerifyPaymentContractActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.favorites.basicPayment.PayBasicActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.favorites.basicPayment.ValuesActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.favorites.basicPayment.SelectDebitForBasicActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.favorites.basicPayment.VerifyBasicPaymentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.serbipagos.favorites.basicPayment.SelectDebitForServiceActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.serbipagos.favorites.ContractServicesActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.serbipagos.favorites.SubServicesActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.serbipagos.favorites.basicPayment.PayServiceActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.serbipagos.favorites.basicPayment.CategoriesValuesActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:name="bienlinea.bi.com.gt.locks.activities.MainLockActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="bienlinea.bi.com.gt.locks.activities.AccountsToLockActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.products.presentation.product_request.ui.OpeningBaseActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="bienlinea.bi.com.gt.products.presentation.preauthorized_products.ui.PreauthorizedProductActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.negotiation.presentation.detail_negotiation.ui.DetailNegotiationActivity"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.negotiation.presentation.preview_negotiation.ui.PreviewNegotiationActivity">
+            <meta-data android:name="android.app.lib_name" android:value=""/>
+        </activity>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.negotiation.presentation.form_negotiation.ui.FormNegotiationActivity">
+            <meta-data android:name="android.app.lib_name" android:value=""/>
+        </activity>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.negotiation.presentation.home_negotiation.ui.NegotiationActivity">
+            <meta-data android:name="android.app.lib_name" android:value=""/>
+        </activity>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.driven_ui.presentation.PageComponentActivity"/>
+        <activity android:exported="false" android:name="bienlinea.bi.com.gt.common.onBoarding.presentation.OnboardingActivityV2" android:screenOrientation="nosensor"/>
+        <activity android:configChanges="layoutDirection|orientation|screenSize" android:exported="false" android:name="bienlinea.bi.com.gt.common.utils.video.ui.VideoTutorialActivity" android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"/>
+        <activity android:exported="true" android:launchMode="singleTop" android:name="bienlinea.bi.com.gt.common.utils.notifications.IntentPushNotificationActivity" android:theme="@style/SplashThemeIntent"/>
+        <activity android:exported="true" android:name="bienlinea.bi.com.gt.common.utils.permission.RequestPermissionsActivity" android:screenOrientation="nosensor" android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"/>
+        <activity android:name="bienlinea.bi.com.gt.common.tokenBi.presentation.ui.TokenBiConfigurationActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="bienlinea.bi.com.gt.common.tokenBi.presentation.ui.TokenBiActivity" android:screenOrientation="nosensor" android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"/>
+        <activity android:name="bienlinea.bi.com.gt.common.utils.facephi.CommonRegisterFacephiActivity" android:screenOrientation="nosensor" android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"/>
+        <activity android:name="bienlinea.bi.com.gt.common.tokenBi.presentation.ui.TokenAffiliationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.common.utils.ImageActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|navigation|orientation|screenSize" android:name="bienlinea.bi.com.gt.common.utils.opening.page.PageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|navigation|orientation|screenSize" android:name="bienlinea.bi.com.gt.common.presentation.formComponent.NewPageActivity" android:screenOrientation="portrait"/>
+        <activity android:name="bienlinea.bi.com.gt.common.utils.facephi.SdkActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Translucent"/>
+        <activity android:configChanges="orientation" android:label="@string/app_name" android:name="com.facephi.selphi.Widget" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:label="@string/app_name" android:name="com.facephi.selphid.Widget" android:screenOrientation="portrait"/>
+        <provider android:authorities="bienlinea.bi.com.gt.common.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity android:name="bienlinea.bi.com.gt.common.utils.PivoteActivity" android:theme="@style/AppTheme.Translucent"/>
+        <activity android:name="bienlinea.bi.com.gt.common.onBoarding.presentation.OnBoardingActivity" android:screenOrientation="portrait" android:theme="@style/OnboardingAppTheme"/>
+        <activity android:name="com.gt.signature_mnc.SignatureActivity"/>
+        <activity android:name="com.gt.signature_mnc.SignatureHorizontalActivity"/>
+        <activity android:name="com.facephi.phacturas.big.widget.ui.WidgetActivity" android:theme="@style/Phacturas_Widget"/>
+        <provider android:authorities="gt.com.bi.bienlinea.vcsinitprovider" android:exported="false" android:initOrder="50" android:name="br.com.hst.vcs.components.providers.VCSInitProvider"/>
+        <service android:name="br.com.hst.vcs.service.task.TaskJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:enabled="false" android:exported="true" android:foregroundServiceType="connectedDevice" android:name="br.com.hst.vcs.service.hce.CardEmulationService" android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.nfc.cardemulation.host_apdu_service" android:resource="@xml/aid_list"/>
+        </service>
+        <service android:exported="false" android:name="br.com.hst.vcs.service.ots.OnTerminateService"/>
+        <service android:enabled="true" android:exported="false" android:isolatedProcess="true" android:name="com.guardsquare.dexguard.runtime.detection.RootDetectorService" android:process=":dgWebView"/>
+        <receiver android:exported="false" android:name="br.com.hst.vcs.service.qpm.QuickPaymentOnBoot">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="orientation" android:exported="false" android:name="com.facephi.selphi_component.ui.SelphiComponentMainActivity" android:screenOrientation="portrait" android:theme="@style/Theme.SelphiComponent"/>
+        <activity android:configChanges="orientation" android:exported="false" android:name="com.facephi.selphid_component.ui.SelphidComponentMainActivity" android:screenOrientation="portrait" android:theme="@style/Theme.SelphIdComponent"/>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.ktx.FirebaseInappmessagingDisplayLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.perf.ktx.FirebasePerfLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ml.vision.VisionRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.ktx.FirebaseMessagingLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ml.common.CommonComponentRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.ktx.FirebaseDynamicLinksLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.FirebaseDynamicLinksKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.ktx.FirebaseConfigLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.FirebaseRemoteConfigKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+            <meta-data android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED" android:value="true"/>
+        </receiver>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.text.internal.TextRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <provider android:authorities="gt.com.bi.bienlinea.mlkitinitprovider" android:exported="false" android:initOrder="99" android:name="com.google.mlkit.common.internal.MlKitInitProvider"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <property android:name="android.adservices.AD_SERVICES_CONFIG" android:resource="@xml/ga_ad_services_config"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.firebase.sessions.SessionLifecycleService"/>
+        <provider android:authorities="gt.com.bi.bienlinea.firebaseinitprovider" android:directBootAware="true" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:exported="true" android:name="androidx.compose.ui.tooling.PreviewActivity"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:name="androidx.work.impl.foreground.SystemForegroundService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="false" android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"/>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="false" android:exported="false" android:name="androidx.camera.core.impl.MetadataHolderService">
+            <meta-data android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER" android:value="androidx.camera.camera2.Camera2Config$DefaultProvider"/>
+        </service>
+        <provider android:authorities="gt.com.bi.bienlinea.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <receiver android:exported="false" android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <uses-library android:name="android.ext.adservices" android:required="false"/>
+        <uses-library android:name="androidx.window.extensions" android:required="false"/>
+        <uses-library android:name="androidx.window.sidecar" android:required="false"/>
+        <activity android:exported="true" android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity" android:theme="@style/WhiteBackgroundTheme">
+            <intent-filter android:priority="-100">
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity" android:theme="@style/WhiteBackgroundTheme">
+            <intent-filter android:priority="-100">
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity" android:theme="@style/WhiteBackgroundDialogTheme">
+            <intent-filter android:priority="-100">
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <provider android:authorities="gt.com.bi.bienlinea.credoapp.behavioral.provider" android:exported="false" android:name="credoapp.module.behavioral.BehavioralProvider"/>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="io.card.payment.CardIOActivity"/>
+        <activity android:name="io.card.payment.DataEntryActivity"/>
+        <activity android:clearTaskOnLaunch="true" android:name="com.journeyapps.barcodescanner.CaptureActivity" android:screenOrientation="sensorLandscape" android:stateNotNeeded="true" android:theme="@style/zxing_CaptureTheme" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:exported="false" android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" android:stateNotNeeded="true" android:theme="@style/Theme.PlayCore.Transparent"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.microblink.activity.DocumentScanActivity" android:screenOrientation="nosensor"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.microblink.activity.BarcodeScanActivity" android:screenOrientation="sensor"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.microblink.activity.FieldByFieldScanActivity" android:screenOrientation="nosensor"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.microblink.activity.LegacyDocumentVerificationActivity" android:screenOrientation="nosensor"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.microblink.activity.BlinkCardActivity" android:screenOrientation="sensor"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.microblink.activity.BlinkIdActivity" android:screenOrientation="sensor"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.microblink.activity.DocumentCaptureActivity" android:screenOrientation="sensor"/>
+        <activity android:name="com.microblink.activity.edit.BlinkCardEditActivity" android:screenOrientation="portrait" android:theme="@style/MB_theme_blink_card_edit_screen"/>
+        <meta-data android:name="com.android.vending.splits.required" android:value="true"/>
+        <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
+        <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_DISTRIBUTION_APK"/>
+        <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="3"/>
+    </application>
+</manifest>
